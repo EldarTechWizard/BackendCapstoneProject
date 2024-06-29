@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'djoser',
     'restaurant'
 ]
 
@@ -125,6 +126,17 @@ STATIC_URL = 'restaurant/static/'
 STATICFILES_DIRS = [
     "restaurant/static",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
+
+DJOSER={
+    "USER_ID_FIELD":"username",
+}
 
 
 # Default primary key field type
